@@ -1,0 +1,39 @@
+.preview-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background:black;
+    position: relative;
+    background: linear-gradient(90deg, #202020,black,black);
+   
+    
+ 
+}
+.preview-content{
+    max-width: 1200px;
+    width: 100%;
+    min-height: 530px;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:black;
+   background: transparent;
+    padding: 20px ;
+    img{
+        height: calc(100% - 70px);
+        object-fit: contain;
+        position: absolute;
+        top: 70px;
+        right: 0;
+    }
+    h3{
+        color: #fff;
+        font-weight: 200;
+        text-transform: uppercase;
+        margin-left: 20px;
+        z-index: 2;
+        line-height: 1.5;
+    }
+}

@@ -1,0 +1,17 @@
+.main{
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+    
+}
+.decor-line{
+    height: 2px;
+    background: linear-gradient(90deg,rgba(255, 255, 255, 0),#fff, rgba(255, 255, 255, 0));
+    margin-top: -2px;
+    z-index: 2;
+    
+}

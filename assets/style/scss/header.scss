@@ -1,0 +1,219 @@
+@mixin span {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0px;
+    height: 1px;
+    width: 25px;
+    background: #fff;
+    transition: 1s;
+  }
+  .navbar-navigation{
+    position: relative;
+    height: 100%;
+    width: 80px;
+    display: none;
+    &__btn{
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    background: transparent;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 100000;
+    }
+}
+.header{
+    width: 100%;
+    min-height: 40px;
+    padding: 20px 0;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(90deg, #202020,#101010,black);
+    z-index: 20;
+    // background: #20202094;
+}
+.header-container{
+    max-width: 1200px;
+    width: 100%;
+    height: 30px;
+    padding: 10px 20px;
+    color: #f1f1f1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-item{
+    width: 33%;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h4{
+        font-weight: 200;
+        text-transform: uppercase;
+        padding: 5px 0;
+    }
+    span{
+        font-weight: 200;
+        font-size: 8px;
+
+    }
+}
+.social{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.social-items,
+.social-items-mob,
+.language-items{
+    display: flex;
+    margin-right: 10px;
+   
+}
+.social-item,
+.social-item-mob{
+    padding: 2px 2px 0 2px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.language-item{
+    padding: 0 5px;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+
+.navbar-content{
+    display: flex;
+}
+.navbar-item{
+    padding: 0 10px;
+    text-transform: uppercase;
+    a{
+        color: #fff;
+        font-weight: 200;
+    }
+    &:hover{
+      a{
+        text-shadow: 0 0 10px white;
+        transition:  text-shadow 0.5s;
+        font-weight: 300;
+      }
+    }
+}
+
+.navbar-mob{
+    width: 60%;
+    min-height: 100vh;
+    height: 100%;
+    background: linear-gradient(0deg, #202020,black,black);
+    position: absolute;
+    top: 70px;
+    left: 0;
+    padding: 40px;
+    transform: translateX(-100%);
+    transition: all 0.5s;
+    &.active{
+        transform: translateX(0);
+        transition: all 0.5s;
+    }
+}
+.navbar-mob-container{
+    display: flex;
+    flex-direction: column;
+}
+.navbar-mob-item{
+    margin: 10px 0;
+    transition: all 0.5s;
+   &:hover{
+    transform: translateX(20px);
+    transition: all 0.5s;
+   }
+   a{
+    padding: 5px 0;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 200;
+    color: #fff;
+   }
+}
+@media(max-width: 790px){
+    .nav-bar,
+    .social-items{
+        display: none;
+    }
+    .header-item{
+        width: 100%;
+    }
+    .social-item-mob{
+        margin-top: 10px;
+    }
+    .logo{
+        align-items: start;
+        span{
+            letter-spacing: 1em;
+        }
+    }
+    .header-container{
+        justify-content: space-between;
+    }
+    .navbar-navigation{
+        display: block;
+        &__btn {
+            display: block;
+            overflow: hidden;
+            z-index: 99;
+            margin-right: 10px;
+            & span {
+              display: block;
+              position: absolute;
+              top: 23px;
+              transform: rotate(180deg);
+              height: 1px;
+              width: 25px;
+              right: 12px;
+              background: #fff;
+              transition: all 1s;
+              &::before {
+                @include span;
+                top: 8px;
+              }
+              &::after {
+                @include span;
+                bottom: 8px;
+              }
+            }
+            &.active {
+              & span {
+                transition: all 0s;
+                width: 0;
+                &::after {
+                  bottom: 1px;
+                  transform: rotate(45deg);
+                  transition: 0.3s;
+                }
+                &::before {
+                  top: 0;
+                  transform: rotate(-45deg);
+                  transition: 0.3s;
+                }
+              }
+            }
+          }
+        }
+        .navbar-mob{
+            display: block;
+        }
+    }
