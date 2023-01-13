@@ -112,7 +112,7 @@
   width: 60%;
   min-height: 100vh;
   height: 100%;
-  background: linear-gradient(0deg, #202020, black, black);
+  background: linear-gradient(45deg, #202020, #202020, black);
   position: absolute;
   top: 70px;
   left: 0;
@@ -150,6 +150,10 @@
   .nav-bar,
   .social-items {
     display: none;
+  }
+  .nav-bar__footer,
+  .social-items__footer {
+    display: flex;
   }
   .header-item {
     width: 100%;
