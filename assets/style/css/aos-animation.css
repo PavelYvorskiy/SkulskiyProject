@@ -1,11 +1,11 @@
 [data-aos=anim-logo] {
   letter-spacing: -0.5em;
-  -webkit-transform: translateZ(-70px) translateY(-50px);
-  transform: translateZ(-70px) translateY(-50px);
+  -webkit-transform: translateZ(-70px) translateY(-20px);
+  transform: translateZ(-70px) translateY(-20px);
   opacity: 0;
 }
 [data-aos=anim-logo].aos-animate {
-  letter-spacing: 0.7em;
+  letter-spacing: 0.3em;
   -webkit-transform: translateZ(0) translateY(0);
   transform: translateZ(0) translateY(0);
   opacity: 1;
